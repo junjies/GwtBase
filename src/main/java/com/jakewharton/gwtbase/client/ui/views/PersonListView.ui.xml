@@ -1,0 +1,20 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder
+	xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:ttse="urn:import:com.champmove.tts.client.ui.editors"
+	ui:generateFormat="com.google.gwt.i18n.rebind.format.PropertiesFormat"
+	ui:generateLocales="default">
+	
+	<ui:style>
+		h3 {
+			border-bottom: 1px solid #ccc;
+		}
+	</ui:style>
+	
+	<g:HTMLPanel>
+		<h3>List View</h3>
+		<g:VerticalPanel ui:field="people"/>
+	</g:HTMLPanel>
+</ui:UiBinder>
