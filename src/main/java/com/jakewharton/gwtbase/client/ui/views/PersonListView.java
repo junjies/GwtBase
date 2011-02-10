@@ -9,9 +9,9 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.IsWidget;
-import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.jakewharton.gwtbase.model.PersonProxy;
+import com.jakewharton.gwtbase.widgets.UnorderedList;
 
 public class PersonListView extends Composite implements IsWidget {
 	private static final String ATTRIBUTE_PERSON_ID = "data-person-id";
@@ -25,7 +25,7 @@ public class PersonListView extends Composite implements IsWidget {
 	
 	private Presenter presenter;
 	
-	@UiField VerticalPanel people;
+	@UiField UnorderedList people;
 	
 	public PersonListView() {
 		this.initWidget(uiBinder.createAndBindUi(this));

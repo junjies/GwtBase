@@ -21,4 +21,5 @@
 	<source path="client"/>
 	<source path="model"/>
 	<source path="shared"/>
+	<source path="widgets"/>
 </module>
