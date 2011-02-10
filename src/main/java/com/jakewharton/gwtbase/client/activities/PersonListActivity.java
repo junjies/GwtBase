@@ -49,8 +49,6 @@ public class PersonListActivity implements Activity, PersonListView.Presenter {
 		this.placeController.goTo(PersonPlace.edit(id));
 	}
 	
-	/* OTHER ACTIVITY METHODS */
-	
 	@Override
 	public String mayStop() {
 		// TODO Auto-generated method stub
@@ -60,12 +58,10 @@ public class PersonListActivity implements Activity, PersonListView.Presenter {
 	@Override
 	public void onCancel() {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void onStop() {
 		// TODO Auto-generated method stub
-		
 	}
 }

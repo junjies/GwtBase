@@ -95,23 +95,26 @@ public class PersonEditActivity implements Activity, PersonEditView.Presenter {
 		this.placeController.goTo(PersonPlace.list());
 	}
 
-	/* OTHER ACTIVITY METHODS */
-
 	@Override
 	public String mayStop() {
-		// TODO Auto-generated method stub
+		//TODO: fix AutoBean frozen error
+		
+		/*
+		PersonDriver personDriver = this.personEditView.getPersonDriver();
+		if (personDriver().isChanged()) {
+			return "You have unsaved changes. Are you sure you want to navigate away?";
+		}
+		*/
 		return null;
 	}
 
 	@Override
 	public void onCancel() {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void onStop() {
 		// TODO Auto-generated method stub
-		
 	}
 }
