@@ -1,7 +1,7 @@
 Developers
 ==========
 
-* Jake Wharton <jakewharton@gmail.com>
+* Jake Wharton - <jakewharton@gmail.com>
 
 
 Contributors
