@@ -4,21 +4,22 @@ import com.google.gwt.activity.shared.Activity;
 import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.place.shared.Place;
 import com.google.inject.Inject;
+import com.google.inject.Provider;
 import com.jakewharton.gwtbase.client.activities.PersonEditActivity;
 import com.jakewharton.gwtbase.client.activities.PersonListActivity;
 import com.jakewharton.gwtbase.client.places.PersonPlace;
 
 public class ApplicationActivityMapper implements ActivityMapper {
-	private final PersonListActivity personListActivity;
-	private final PersonEditActivity personEditActivity;
-
+	private final Provider<PersonListActivity> personListActivity;
+	private final Provider<PersonEditActivity> personEditActivity;
+	
 	@Inject
 	public ApplicationActivityMapper(
-			PersonListActivity personListActivity,
-			PersonEditActivity personEditActivity
+			Provider<PersonListActivity> personListActivity,
+			Provider<PersonEditActivity> personEditActivity
 	) {
-		this.personEditActivity = personEditActivity;
 		this.personListActivity = personListActivity;
+		this.personEditActivity = personEditActivity;
 	}
 	
 	@Override
@@ -26,13 +27,11 @@ public class ApplicationActivityMapper implements ActivityMapper {
 		if (place instanceof PersonPlace) {
 			PersonPlace personPlace = (PersonPlace)place;
 			if (personPlace.identifier.equals(PersonPlace.LIST)) {
-				return this.personListActivity;
+				return this.personListActivity.get();
 			} else if (personPlace.identifier.equals(PersonPlace.EDIT)) {
-				this.personEditActivity.setPersonId(personPlace.id);
-				return this.personEditActivity;
+				return this.personEditActivity.get().edit(personPlace.id);
 			} else if (personPlace.identifier.equals(PersonPlace.CREATE)) {
-				this.personEditActivity.createNew();
-				return this.personEditActivity;
+				return this.personEditActivity.get().create();
 			}
 		}
 		

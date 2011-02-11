@@ -1,7 +1,7 @@
 package com.jakewharton.gwtbase.client.activities;
 
 import java.util.Set;
-import com.google.gwt.activity.shared.Activity;
+import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.requestfactory.shared.Receiver;
@@ -17,7 +17,7 @@ import com.jakewharton.gwtbase.client.ui.views.PersonEditView.PersonDriver;
 import com.jakewharton.gwtbase.model.PersonProxy;
 import com.jakewharton.gwtbase.shared.MyRequestFactory;
 
-public class PersonEditActivity implements Activity, PersonEditView.Presenter {
+public class PersonEditActivity extends AbstractActivity implements PersonEditView.Presenter {
 	private final PersonEditView personEditView;
 	private final MyRequestFactory requestFactory;
 	private final PlaceController placeController;
@@ -31,17 +31,9 @@ public class PersonEditActivity implements Activity, PersonEditView.Presenter {
 		this.personEditView = personEditView;
 		this.requestFactory = requestFactory;
 		this.placeController = placeController;
-		
-		//Tell the view we are the controller
-		this.personEditView.setPresenter(this);
-	}
-
-	@Override
-	public void start(AcceptsOneWidget panel, EventBus eventBus) {
-		panel.setWidget(this.personEditView);
 	}
 	
-	public void setPersonId(int personId) {
+	public PersonEditActivity edit(int personId) {
 		this.requestFactory.personRequest().findPerson(personId).fire(new Receiver<PersonProxy>() {
 			@Override
 			public void onSuccess(PersonProxy person) {
@@ -51,13 +43,24 @@ public class PersonEditActivity implements Activity, PersonEditView.Presenter {
 				personRequest.persist().using(person);
 			}
 		});
+		
+		return this;
 	}
-	public void createNew() {
+	public PersonEditActivity create() {
 		MyRequestFactory.PersonRequest personRequest = this.requestFactory.personRequest();
 		PersonProxy person = personRequest.create(PersonProxy.class);
 		this.personEditView.getPersonDriver().edit(person, personRequest);
 		personRequest.persist().using(person);
 		
+		return this;
+	}
+
+	@Override
+	public void start(AcceptsOneWidget panel, EventBus eventBus) {
+		//Tell the view we are the controller
+		this.personEditView.setPresenter(this);
+		
+		panel.setWidget(this.personEditView);
 	}
 
 	@Override
@@ -110,11 +113,11 @@ public class PersonEditActivity implements Activity, PersonEditView.Presenter {
 
 	@Override
 	public void onCancel() {
-		// TODO Auto-generated method stub
+		this.personEditView.setPresenter(null);
 	}
 
 	@Override
 	public void onStop() {
-		// TODO Auto-generated method stub
+		this.personEditView.setPresenter(null);
 	}
 }

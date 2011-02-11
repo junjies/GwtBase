@@ -1,8 +1,7 @@
 package com.jakewharton.gwtbase.client.activities;
 
 import java.util.List;
-
-import com.google.gwt.activity.shared.Activity;
+import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.requestfactory.shared.Receiver;
@@ -13,7 +12,7 @@ import com.jakewharton.gwtbase.client.ui.views.PersonListView;
 import com.jakewharton.gwtbase.model.PersonProxy;
 import com.jakewharton.gwtbase.shared.MyRequestFactory;
 
-public class PersonListActivity implements Activity, PersonListView.Presenter {
+public class PersonListActivity extends AbstractActivity implements PersonListView.Presenter {
 	private final PersonListView personListView;
 	private final MyRequestFactory requestFactory;
 	private final PlaceController placeController;
@@ -27,13 +26,13 @@ public class PersonListActivity implements Activity, PersonListView.Presenter {
 		this.personListView = personListView;
 		this.requestFactory = requestFactory;
 		this.placeController = placeController;
-		
-		//Tell the view we are the presenter
-		this.personListView.setPresenter(this);
 	}
 
 	@Override
 	public void start(AcceptsOneWidget panel, EventBus eventBus) {
+		//Tell the view we are the presenter
+		this.personListView.setPresenter(this);
+		
 		panel.setWidget(this.personListView);
 		
 		this.requestFactory.personRequest().list().fire(new Receiver<List<PersonProxy>>() {
@@ -48,20 +47,14 @@ public class PersonListActivity implements Activity, PersonListView.Presenter {
 	public void editPerson(int id) {
 		this.placeController.goTo(PersonPlace.edit(id));
 	}
-	
-	@Override
-	public String mayStop() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public void onCancel() {
-		// TODO Auto-generated method stub
+		this.personListView.setPresenter(null);
 	}
 
 	@Override
 	public void onStop() {
-		// TODO Auto-generated method stub
+		this.personListView.setPresenter(null);
 	}
 }
