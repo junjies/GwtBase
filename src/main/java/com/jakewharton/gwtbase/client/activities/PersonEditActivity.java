@@ -18,19 +18,19 @@ import com.jakewharton.gwtbase.client.ui.views.PersonEditView;
 import com.jakewharton.gwtbase.client.ui.views.PersonEditView.PersonDriver;
 import com.jakewharton.gwtbase.model.PersonProxy;
 import com.jakewharton.gwtbase.shared.LogUtility;
-import com.jakewharton.gwtbase.shared.MyRequestFactory;
+import com.jakewharton.gwtbase.shared.ApplicationRequestFactory;
 
 public class PersonEditActivity extends AbstractActivity implements PersonEditView.Presenter {
 	private static final Logger LOGGER = LogUtility.get(PersonEditActivity.class);
 	
 	private final PersonEditView personEditView;
-	private final MyRequestFactory requestFactory;
+	private final ApplicationRequestFactory requestFactory;
 	private final PlaceController placeController;
 	
 	@Inject
 	public PersonEditActivity(
 			PersonEditView personEditView,
-			MyRequestFactory requestFactory,
+			ApplicationRequestFactory requestFactory,
 			PlaceController placeController
 	) {
 		LOGGER.log(Level.FINEST, "Instantiating");
@@ -47,7 +47,7 @@ public class PersonEditActivity extends AbstractActivity implements PersonEditVi
 			public void onSuccess(PersonProxy person) {
 				if (person != null) {
 					LOGGER.log(Level.FINE, "Received Person proxy object.");
-					final MyRequestFactory.PersonRequest personRequest = requestFactory.personRequest();
+					final ApplicationRequestFactory.PersonRequest personRequest = requestFactory.personRequest();
 					personRequest.edit(person);
 					personEditView.getPersonDriver().edit(person, personRequest);
 					personRequest.persist().using(person);
@@ -60,7 +60,7 @@ public class PersonEditActivity extends AbstractActivity implements PersonEditVi
 		return this;
 	}
 	public PersonEditActivity create() {
-		MyRequestFactory.PersonRequest personRequest = this.requestFactory.personRequest();
+		ApplicationRequestFactory.PersonRequest personRequest = this.requestFactory.personRequest();
 		PersonProxy person = personRequest.create(PersonProxy.class);
 		this.personEditView.getPersonDriver().edit(person, personRequest);
 		personRequest.persist().using(person);

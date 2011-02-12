@@ -7,7 +7,7 @@ import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.jakewharton.gwtbase.client.ioc.DesktopInjectorWrapper;
 import com.jakewharton.gwtbase.client.ioc.InjectorWrapper;
-import com.jakewharton.gwtbase.shared.MyLogFormatter;
+import com.jakewharton.gwtbase.shared.LogFormatter;
 
 public class Main implements EntryPoint {
 	private static final String DAVE_NAME = "Dave Bowman";
@@ -19,7 +19,7 @@ public class Main implements EntryPoint {
 		// https://groups.google.com/d/msg/google-web-toolkit/aEyDwNP1tgM/qEmTz1l6i5QJ
 		Handler handlers[] = Logger.getLogger("").getHandlers();
 		for (Handler handler : handlers) {
-			handler.setFormatter(new MyLogFormatter(false));
+			handler.setFormatter(new LogFormatter(false));
 		}
 	}
 

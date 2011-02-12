@@ -10,7 +10,7 @@ import com.google.gwt.requestfactory.shared.Service;
 import com.jakewharton.gwtbase.domain.Person;
 import com.jakewharton.gwtbase.model.PersonProxy;
 
-public interface MyRequestFactory extends RequestFactory {
+public interface ApplicationRequestFactory extends RequestFactory {
 
 	@Service(Person.class)
 	interface PersonRequest extends RequestContext {

@@ -13,19 +13,19 @@ import com.jakewharton.gwtbase.client.places.PersonPlace;
 import com.jakewharton.gwtbase.client.ui.views.PersonListView;
 import com.jakewharton.gwtbase.model.PersonProxy;
 import com.jakewharton.gwtbase.shared.LogUtility;
-import com.jakewharton.gwtbase.shared.MyRequestFactory;
+import com.jakewharton.gwtbase.shared.ApplicationRequestFactory;
 
 public class PersonListActivity extends AbstractActivity implements PersonListView.Presenter {
 	private static final Logger LOGGER = LogUtility.get(PersonListActivity.class);
 	
 	private final PersonListView personListView;
-	private final MyRequestFactory requestFactory;
+	private final ApplicationRequestFactory requestFactory;
 	private final PlaceController placeController;
 	
 	@Inject
 	public PersonListActivity(
 			PersonListView personListView,
-			MyRequestFactory requestFactory,
+			ApplicationRequestFactory requestFactory,
 			PlaceController placeController
 	) {
 		LOGGER.log(Level.FINER, "Instantiating");
