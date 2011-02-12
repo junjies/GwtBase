@@ -1,4 +1,4 @@
-package com.jakewharton.gwtbase.guice;
+package com.jakewharton.gwtbase.ioc;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;

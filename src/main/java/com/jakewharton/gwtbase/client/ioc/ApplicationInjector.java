@@ -1,7 +1,7 @@
-package com.jakewharton.gwtbase.client.application.ioc;
+package com.jakewharton.gwtbase.client.ioc;
 
 import com.google.gwt.inject.client.Ginjector;
-import com.jakewharton.gwtbase.client.application.Application;
+import com.jakewharton.gwtbase.client.Application;
 
 // Interface for that forces or "extending" injectors (who are interfaces)
 // to return an AcrintaFitnessApp

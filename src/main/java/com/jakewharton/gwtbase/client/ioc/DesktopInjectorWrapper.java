@@ -1,4 +1,4 @@
-package com.jakewharton.gwtbase.client.application.ioc;
+package com.jakewharton.gwtbase.client.ioc;
 
 import com.google.gwt.core.client.GWT;
 

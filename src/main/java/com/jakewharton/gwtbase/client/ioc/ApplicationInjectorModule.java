@@ -1,12 +1,12 @@
-package com.jakewharton.gwtbase.client.application.ioc;
+package com.jakewharton.gwtbase.client.ioc;
 
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.event.shared.SimpleEventBus;
 import com.google.gwt.inject.client.AbstractGinModule;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.inject.Singleton;
-import com.jakewharton.gwtbase.client.application.ioc.provider.MyRequestFactoryProvider;
-import com.jakewharton.gwtbase.client.application.ioc.provider.PlaceControllerProvider;
+import com.jakewharton.gwtbase.client.ioc.provider.MyRequestFactoryProvider;
+import com.jakewharton.gwtbase.client.ioc.provider.PlaceControllerProvider;
 import com.jakewharton.gwtbase.shared.MyRequestFactory;
 
 public class ApplicationInjectorModule extends AbstractGinModule {

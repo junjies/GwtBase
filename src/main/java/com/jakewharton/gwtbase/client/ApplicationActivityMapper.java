@@ -1,4 +1,4 @@
-package com.jakewharton.gwtbase.client.application;
+package com.jakewharton.gwtbase.client;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

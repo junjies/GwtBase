@@ -1,7 +1,7 @@
-package com.jakewharton.gwtbase.client.application.ioc;
+package com.jakewharton.gwtbase.client.ioc;
 
 import com.google.gwt.inject.client.GinModules;
-import com.jakewharton.gwtbase.client.application.DesktopApplication;
+import com.jakewharton.gwtbase.client.DesktopApplication;
 
 // Okay so we are just going to define an Injector interface 
 // that uses the @annotation to point to the particular "AbstractGinModule" class

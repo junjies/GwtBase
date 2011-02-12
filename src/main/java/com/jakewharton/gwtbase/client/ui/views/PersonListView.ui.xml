@@ -4,7 +4,7 @@
 	xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui"
 	xmlns:e="urn:import:com.jakewharton.gwtbase.client.ui.editors"
-	xmlns:w="urn:import:com.jakewharton.gwtbase.widgets"
+	xmlns:w="urn:import:com.jakewharton.gwtbase.client.ui.widgets"
 	ui:generateFormat="com.google.gwt.i18n.rebind.format.PropertiesFormat"
 	ui:generateLocales="default">
 	

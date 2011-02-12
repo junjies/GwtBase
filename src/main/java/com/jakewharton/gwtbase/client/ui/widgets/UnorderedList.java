@@ -1,4 +1,4 @@
-package com.jakewharton.gwtbase.widgets;
+package com.jakewharton.gwtbase.client.ui.widgets;
 
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.dom.client.UListElement;

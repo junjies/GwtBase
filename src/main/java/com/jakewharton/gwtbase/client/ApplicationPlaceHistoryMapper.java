@@ -1,4 +1,4 @@
-package com.jakewharton.gwtbase.client.application;
+package com.jakewharton.gwtbase.client;
 
 import com.google.gwt.place.shared.PlaceHistoryMapper;
 import com.google.gwt.place.shared.WithTokenizers;

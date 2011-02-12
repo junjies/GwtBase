@@ -1,4 +1,4 @@
-package com.jakewharton.gwtbase.client.application.ioc.provider;
+package com.jakewharton.gwtbase.client.ioc.provider;
 
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.PlaceController;

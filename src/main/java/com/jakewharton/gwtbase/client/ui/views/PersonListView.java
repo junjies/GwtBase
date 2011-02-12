@@ -10,8 +10,8 @@ import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
+import com.jakewharton.gwtbase.client.ui.widgets.UnorderedList;
 import com.jakewharton.gwtbase.model.PersonProxy;
-import com.jakewharton.gwtbase.widgets.UnorderedList;
 
 public class PersonListView extends Composite implements IsWidget {
 	private static final String ATTRIBUTE_PERSON_ID = "data-person-id";

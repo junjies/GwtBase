@@ -1,4 +1,4 @@
-package com.jakewharton.gwtbase.client.application;
+package com.jakewharton.gwtbase.client;
 
 public class Application {
 	protected static boolean isMobile = false;

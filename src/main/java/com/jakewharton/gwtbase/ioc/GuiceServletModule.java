@@ -1,4 +1,4 @@
-package com.jakewharton.gwtbase.guice;
+package com.jakewharton.gwtbase.ioc;
 
 import com.google.gwt.requestfactory.client.DefaultRequestTransport;
 import com.google.gwt.requestfactory.server.RequestFactoryServlet;

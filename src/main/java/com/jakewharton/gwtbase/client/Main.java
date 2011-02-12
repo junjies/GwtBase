@@ -1,12 +1,12 @@
-package com.jakewharton.gwtbase.client.application;
+package com.jakewharton.gwtbase.client;
 
 import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
-import com.jakewharton.gwtbase.client.application.ioc.DesktopInjectorWrapper;
-import com.jakewharton.gwtbase.client.application.ioc.InjectorWrapper;
+import com.jakewharton.gwtbase.client.ioc.DesktopInjectorWrapper;
+import com.jakewharton.gwtbase.client.ioc.InjectorWrapper;
 import com.jakewharton.gwtbase.shared.MyLogFormatter;
 
 public class Main implements EntryPoint {
