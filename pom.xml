@@ -13,7 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<name>Jake Wharton's GWT Base Project</name>
-	<description>A base project for creating GWT web applications by leveraging MVP, Guice, Gin, Editors, RequestFactories, and Maven.</description>
+	<description>A base project for creating GWT web applications by leveraging MVP, Guice/Gin, Editors, RequestFactories, and Logging.</description>
 	<url>http://jakewharton.com/</url>
 
 	<scm>

@@ -1,5 +1,7 @@
 package com.jakewharton.gwtbase.client.application;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import com.google.gwt.activity.shared.ActivityManager;
 import com.google.gwt.activity.shared.CachingActivityMapper;
 import com.google.gwt.event.shared.EventBus;
@@ -11,8 +13,10 @@ import com.google.inject.Inject;
 import com.jakewharton.gwtbase.client.events.NotificationEvent;
 import com.jakewharton.gwtbase.client.places.PersonPlace;
 import com.jakewharton.gwtbase.client.ui.ShellDesktop;
+import com.jakewharton.gwtbase.shared.LogUtility;
 
 public class DesktopApplication extends Application implements ShellDesktop.Presenter {
+	private static final Logger LOGGER = LogUtility.get(DesktopApplication.class);
 	
 	private final ShellDesktop shell;
 	private final EventBus eventBus;
@@ -29,6 +33,7 @@ public class DesktopApplication extends Application implements ShellDesktop.Pres
 			PlaceController placeController, 
 			ApplicationActivityMapper activityMapper,
 			ApplicationPlaceHistoryMapper appPlaceHistoryMapper) {
+		LOGGER.log(Level.ALL, "Creating");
 		
 		this.shell = shell;
 		this.shell.setPresenter(this);
@@ -43,6 +48,7 @@ public class DesktopApplication extends Application implements ShellDesktop.Pres
 	
 	@Override
 	public void run() {
+		LOGGER.log(Level.ALL, "Running");
 		/*
 		GWT.setUncaughtExceptionHandler(new GWT.UncaughtExceptionHandler() {
 			public void onUncaughtException(Throwable e) {

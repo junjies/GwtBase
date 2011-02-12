@@ -7,13 +7,13 @@ A base project for development of web applications using GWT and its best-practi
 Technologies
 ------------
 
- * Maven
  * MVP
  * Gin & Guice
  * RequestFactory
  * Editors
  * Validation
  * UI Binder
+ * Logging
 
 
 Development

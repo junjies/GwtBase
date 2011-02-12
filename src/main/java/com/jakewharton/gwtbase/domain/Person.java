@@ -4,10 +4,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.validation.constraints.Size;
+import com.jakewharton.gwtbase.shared.LogUtility;
 
 public class Person {
+	private static final Logger LOGGER = LogUtility.get(Person.class);
+	
 	private Integer id;
 	
 	@Size(min = 2, message="Please enter a name of 2 or more characters")
@@ -62,7 +66,7 @@ public class Person {
 	}
 
 	public void persist() {
-		System.out.println("PERSIST");
+		LOGGER.log(Level.FINE, "Persisting Person instance.");
 		if (this.id != null) {
 			if (!people.containsKey(this.id)) {
 				throw new IllegalArgumentException("ID not in DB.");
@@ -76,17 +80,17 @@ public class Person {
 		people.put(this.id, this);
 	}
 	public static Person findPerson(Integer id) {
-		System.out.println("FIND PERSON " + id);
+		LOGGER.log(Level.FINE, "Finding Person with id " + id);
 		return people.get(id);
 	}
 	public static List<Person> list() {
-		System.out.println("LIST");
+		LOGGER.log(Level.FINE, "Listing all Persons.");
 		return new ArrayList<Person>(people.values());
 	}
 	
 	
 	public Integer getVersion() {
-		System.out.println("GET VERSION");
+		LOGGER.log(Level.FINEST, "Version inquiry.");
 		return 1;
 	}
 }
