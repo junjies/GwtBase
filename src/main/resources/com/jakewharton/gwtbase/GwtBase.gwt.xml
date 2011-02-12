@@ -27,7 +27,7 @@
 
 	<inherits name="com.google.gwt.user.theme.standard.Standard"/>
 
-	<entry-point class="com.jakewharton.gwtbase.client.application.Main"/>
+	<entry-point class="com.jakewharton.gwtbase.client.Main"/>
 
 	<source path="client"/>
 	<source path="model"/>
