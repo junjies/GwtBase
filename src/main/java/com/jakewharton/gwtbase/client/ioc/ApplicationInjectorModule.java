@@ -5,7 +5,7 @@ import com.google.gwt.event.shared.SimpleEventBus;
 import com.google.gwt.inject.client.AbstractGinModule;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.inject.Singleton;
-import com.jakewharton.gwtbase.client.ioc.provider.MyRequestFactoryProvider;
+import com.jakewharton.gwtbase.client.ioc.provider.ApplicationRequestFactoryProvider;
 import com.jakewharton.gwtbase.client.ioc.provider.PlaceControllerProvider;
 import com.jakewharton.gwtbase.shared.ApplicationRequestFactory;
 
@@ -17,7 +17,7 @@ public class ApplicationInjectorModule extends AbstractGinModule {
 		// we can also use a Provider to configure our injections
 		bind(PlaceController.class).toProvider(PlaceControllerProvider.class).in(Singleton.class);
 		//request factory
-		bind(ApplicationRequestFactory.class).toProvider(MyRequestFactoryProvider.class).in(Singleton.class);
+		bind(ApplicationRequestFactory.class).toProvider(ApplicationRequestFactoryProvider.class).in(Singleton.class);
 		
 		
 		// Hey, notice that we are configuring every thing that is ultimately injected?

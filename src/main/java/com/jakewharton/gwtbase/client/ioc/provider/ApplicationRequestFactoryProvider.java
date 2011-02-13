@@ -6,11 +6,11 @@ import com.google.inject.Inject;
 import com.google.inject.Provider;
 import com.jakewharton.gwtbase.shared.ApplicationRequestFactory;
 
-public class MyRequestFactoryProvider implements Provider<ApplicationRequestFactory> {
+public class ApplicationRequestFactoryProvider implements Provider<ApplicationRequestFactory> {
 	private final EventBus eventBus;
 	
 	@Inject
-	public MyRequestFactoryProvider(EventBus eventBus) {
+	public ApplicationRequestFactoryProvider(EventBus eventBus) {
 		this.eventBus = eventBus;
 	}
 	
