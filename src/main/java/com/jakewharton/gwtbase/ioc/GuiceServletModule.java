@@ -10,7 +10,7 @@ public class GuiceServletModule extends ServletModule {
 	
 	@Override
 	protected void configureServlets() {
-		this.bind(RequestFactoryServlet.class).in(Singleton.class);
-		this.serve(GuiceServletModule.URL).with(RequestFactoryServlet.class);
+		bind(RequestFactoryServlet.class).in(Singleton.class);
+		serve(GuiceServletModule.URL).with(RequestFactoryServlet.class);
 	}
 }
