@@ -17,12 +17,6 @@ public final class LogUtility {
 	 * @return Logger instance.
 	 */
 	public static Logger get(Class<?> cls) {
-		String className = cls.getName();
-		try {
-			int lastDot = className.lastIndexOf('.');
-			return Logger.getLogger(className.substring(lastDot + 1));
-		} catch (IndexOutOfBoundsException e) {
-			return Logger.getLogger(className);
-		}
+	    return Logger.getLogger(cls.getSimpleName());
 	}
 }
