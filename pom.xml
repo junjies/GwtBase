@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project
-	xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	
+
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.jakewharton</groupId>
@@ -112,7 +110,7 @@
 				<artifactId>maven-release-plugin</artifactId>
 				<version>2.1</version>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-eclipse-plugin</artifactId>
@@ -122,10 +120,10 @@
 					<downloadJavadocs>false</downloadJavadocs>
 					<wtpversion>2.0</wtpversion>
 					<additionalBuildcommands>
-                        <name>com.google.gwt.eclipse.core.gwtProjectValidator</name>
+						<name>com.google.gwt.eclipse.core.gwtProjectValidator</name>
 					</additionalBuildcommands>
 					<additionalProjectnatures>
-    					<projectnature>com.google.gwt.eclipse.core.gwtNature</projectnature>
+						<projectnature>com.google.gwt.eclipse.core.gwtNature</projectnature>
 					</additionalProjectnatures>
 				</configuration>
 			</plugin>
@@ -150,7 +148,7 @@
 			<artifactId>gin</artifactId>
 			<version>${gin.version}</version>
 		</dependency>
-		
+
 		<!-- Required for GWT RequestFactory -->
 		<dependency>
 			<groupId>org.json</groupId>
