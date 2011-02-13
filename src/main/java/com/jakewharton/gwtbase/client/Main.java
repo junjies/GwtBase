@@ -17,7 +17,7 @@ public class Main implements EntryPoint {
 
 	static {
 		// https://groups.google.com/d/msg/google-web-toolkit/aEyDwNP1tgM/qEmTz1l6i5QJ
-		Handler handlers[] = Logger.getLogger("").getHandlers();
+		Handler[] handlers = Logger.getLogger("").getHandlers();
 		for (Handler handler : handlers) {
 			handler.setFormatter(new LogFormatter(false));
 		}
